@@ -1,0 +1,11 @@
+image: archlinux
+sources:
+  - https://git.sr.ht/~thecatster/tegress
+secrets:
+  - 3ec8d6c4-470d-4198-8b1c-b3c772f8fff3
+tasks:
+  - mirror: |
+      cd tegress
+      git remote add github git@github.com:thecatster/tegress
+      ssh-keyscan github.com >> ~/.ssh/known_hosts
+      git push -f github master
